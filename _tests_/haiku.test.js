@@ -1,23 +1,19 @@
-import Haiku from './../src/haiku.js';  
- describe('Haiku', () => {
- test('should correctly create a haiku object with three lines',() => {
-  const haiku = new Haiku("line1","line2","line3");
-  expect(haiku);
-  expect(haiku.line1).toMatch("line1");
-  expect(haiku.line2).toMatch("line2");
-  expect(haiku.line3).toMatch("line3");
+import Haiku from "./../src/haiku.js";
+describe("Haiku", () => {
+  test("should correctly create a haiku object with three lines", () => {
+    const haiku = new Haiku("line1", "line2", "line3");
+    expect(haiku);
+    expect(haiku.line1).toMatch("line1");
+    expect(haiku.line2).toMatch("line2");
+    expect(haiku.line3).toMatch("line3");
+  });
+  test("should recognize if line1 has 5 syllables", () => {
+    const haiku = new Haiku("I lay on the ground","line2","line3");
+    expect(haiku.ifHaiku()).toEqual("5 syllables");
   });
 
-  test('should correctly determine if line is a string', () => {
-  const haiku = new Haiku("line1","line2","line3");
-  haiku.line1.isString();
-  expect(true);
-  });
-
-  // test('should correctly determine if line1 is not a string', () => {
-  //   haiku.isString();
-  //   expect(false);
-  //   });
-
+  // "I lay on the ground"
+  // "The snow feels nice on my fur"
+  // "The snow feels nice on my fur"
 
 });
